@@ -1,0 +1,28 @@
+package functionalInterface;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class BusinessLogic_1 {
+	ArrayList<Employee_1> addrecords(){
+		ArrayList<Employee_1>  emp=new ArrayList<Employee_1>();
+		emp.add(new Employee_1(94,"jeison",27,56000,"software"));
+		emp.add(new Employee_1(54,"yog",37,67000,"IT"));
+		emp.add(new Employee_1(14,"gauthams",25,36000,"Tech"));
+		emp.add(new Employee_1(84,"san",23,86000,"testing"));
+		emp.add(new Employee_1(74,"sach",27,96000,"manager"));
+		emp.stream().forEach((i) -> System.out.println(i));
+		return emp;
+
+	}
+	void processRecords(ArrayList<Employee_1> emp)
+	{
+		List<Employee_1> employeesorted = emp.stream().sorted(Comparator.comparingInt(Employee_1::getSalary))
+				.collect(Collectors.toList()); // ascending orderSystem.out.println(employeesSortedList2);
+		employeesorted.forEach(i -> System.out.println(i));
+		
+	}
+
+}
