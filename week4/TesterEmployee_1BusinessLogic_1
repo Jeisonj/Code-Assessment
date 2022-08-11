@@ -1,0 +1,13 @@
+package functionalInterface;
+
+import java.util.ArrayList;
+
+public class TesterEmployee_1BusinessLogic_1 {
+	public static void main(String[] args) {
+		BusinessLogic_1 b=new BusinessLogic_1();
+		ArrayList<Employee_1>emp=b.addrecords();
+		System.out.println("After sorting based on Salary");
+		b.processRecords(emp);
+	}
+
+}
